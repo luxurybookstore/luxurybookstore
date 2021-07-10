@@ -1,3 +1,79 @@
+body{
+    /* position: relative; */
+}
+header{
+    width: 100%;
+    height: 100px;
+    background-color:blueviolet;
+    border:2px solid black;
+    display: inline-block;
+    position: sticky;
+    top: 0%;
+}
+header img{
+    width: 200px;
+    height: 100px;
+    float: left;
+}
+nav{
+    /* border: 2px solid black; */
+    /* margin-top: 0px;
+    margin-left: 50px;
+    margin-right: 50px; */
+    position: absolute;
+    bottom: 0;
+    right: 0%;
+    /* margin-bottom: 100%; */
+    /* float: right; */
+}
+li{
+    
+    /* border: 2px solid black; */
+    font-size: 25px;
+    /* margin-top: 0px;
+    margin-left: 50px;
+    margin-right: 50px; */
+    margin-right: 10px;
+    padding: 5px;
+    display: inline-block;
+}
+li a{
+    text-decoration: none;
+}
+li:hover{
+    background-color: red;
+}
+main{
+    margin-top: 10px;
+    /* height: 1000px; */
+    text-align: center;
+}
+
+footer{
+    clear: both;
+    /* position: relative; */
+    width: 100%;
+    height: 50px;
+    display: inline-block;
+    text-align: center;
+    background-color: blueviolet;
+    border: 2px solid black;
+}
+footer p{
+    font-size: 20px;
+    font-family: fantasy;
+    /* position: absolute; */
+    top: 10px;
+    left: 50px;
+}
+footer img{
+    margin-top: 5px;
+    height: 80%;
+    float: right;
+    margin-right: 10px;
+}
+
+
 div{
     display: inline-block;
     width: 40%;
@@ -22,8 +98,17 @@ div{
 
 
 
-img{
+/* img{
     width: 200;
     height: 400;
     
+} */
+
+/* ---------------------About Us  CSS*/
+/* 
+div[class^="mainAboutUs"]{
+    background-color: black;
 }
+
+ */
+

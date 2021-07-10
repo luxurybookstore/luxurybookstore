@@ -1,0 +1,20 @@
+ div{
+     margin: 15px;
+     display: inline-block;
+     width: 400px;
+     height: 500px;
+    background-color: white;
+    border: 2px solid black;
+    /* padding: 10px; */
+    float: left;
+}
+
+div img{
+    margin-top: 10px;
+    width: 200px;
+    height: 300px;
+}
+
+h3,p,a{
+    margin: 10px;
+}

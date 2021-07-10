@@ -1,0 +1,29 @@
+div{
+    display: inline-block;
+    width: 40%;
+}
+#Biography{
+    background-color: aqua;
+
+}
+#Art{
+    background-color: cadetblue;
+}
+#Children{
+    background-color: coral;
+}
+#Fiction {
+    background-color: crimson;
+}
+#Business{
+    background-color: darkgrey;
+}
+
+
+
+
+img{
+    width: 200;
+    height: 400;
+    
+}

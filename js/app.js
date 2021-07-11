@@ -1,4 +1,6 @@
 'use strict';
+
+
 let books=[];
 
 
@@ -133,3 +135,13 @@ function generatebooks(){
   new Book('images/I Work At A Public Library.png','I Work At A Public Library','Biography','From a patron\'s missing wetsuit to the scent of crab cakes wafting through the stacks, I Work at a Public Library showcases the oddities that have come across Gina Sheridan\'s circulation desk. Whether she\'s helping someone scan his face onto an online dating site or explaining why the library doesn\'t have any dragon autobiographies, Sheridan\'s bizarre tales prove that she\'s truly seen it all.',21);
 
 }
+
+
+
+const menuToggle = document.querySelector('.toggle');
+const showcase = document.querySelector('.showcase');
+
+menuToggle.addEventListener('click', () => {
+  menuToggle.classList.toggle('active');
+  showcase.classList.toggle('active');
+})

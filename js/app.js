@@ -104,15 +104,20 @@ function addToCart(event){
      carItemsRender();
 }
 console.log(cart);
+let trEl;
 
+//render cart funtion
 function carItemsRender(){
-    let tableEl=document.getElementById('cartTable');
-    let trEl=document.createElement('tr')
-    for (let i = 0; i < cart.length; i++) {
-    trEl.textContent="";}
+    let tableEl=document.getElementById('tablebody');
+    trEl=document.createElement('tr')
+    tableEl.innerHTML="";
+
+
+
+
 
     for (let i = 0; i < cart.length; i++) {
-         trEl=document.createElement('tr')     
+          
     let thEl1=document.createElement('th')
     let thEl2=document.createElement('th')
     let thEl3=document.createElement('th')
@@ -135,23 +140,25 @@ function carItemsRender(){
     
     thEl4.appendChild(aEl);
     tableEl.appendChild(trEl);
+    settingToLocalStorage();
 }
 
+
+}
 function RemoveItem(event){
     event.preventDefault();
     cart.splice(event.target.id,1)
     console.log(event.target.id);
+    carItemsRender();
+    counter--;
 
 }
 
+function settingToLocalStorage() {
+    let data = JSON.stringify(cart);
    
-    
-
-    
-    
-
-}
-
+    localStorage.setItem('cart', data);
+  }
 
 
 

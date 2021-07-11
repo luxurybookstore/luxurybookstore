@@ -66,8 +66,9 @@ Book.prototype.renderbook=function(bookObj){
   bookImgEl.setAttribute('src',this.image);
   buttonEl.textContent='add to cart';
 
-buttonEl.setAttribute('id',`${this.bookName}`);
+buttonEl.setAttribute('id',`${books.indexOf(this)}`);
 buttonEl.addEventListener('click',addToCart);
+// buttonEl.addEventListener('click',carItemsRender);
 
 
 
@@ -94,12 +95,63 @@ let counter=0;
 function addToCart(event){
     event.preventDefault();
 
-    let productName=event.target.id;
+    let productIndex=event.target.id;
 
-    cart.push(productName);
+    cart.push(books[productIndex]);
     console.log(cart);
+    counter++;
+    // if(!==null)
+     carItemsRender();
 }
 console.log(cart);
+
+function carItemsRender(){
+    let tableEl=document.getElementById('cartTable');
+    let trEl=document.createElement('tr')
+    for (let i = 0; i < cart.length; i++) {
+    trEl.textContent="";}
+
+    for (let i = 0; i < cart.length; i++) {
+         trEl=document.createElement('tr')     
+    let thEl1=document.createElement('th')
+    let thEl2=document.createElement('th')
+    let thEl3=document.createElement('th')
+    let thEl4=document.createElement('th')
+    let imageEl=document.createElement('img')
+    let aEl=document.createElement('a')
+
+    imageEl.setAttribute('src',cart[i].image)
+    thEl2.textContent=cart[i].bookName;
+    thEl3.textContent=cart[i].price;
+    aEl.setAttribute('href','')
+    aEl.setAttribute('id',i)
+    aEl.textContent='remove';
+    aEl.addEventListener("click",RemoveItem)
+    trEl.appendChild(thEl1);
+    trEl.appendChild(thEl2);
+    trEl.appendChild(thEl3);
+    trEl.appendChild(thEl4);
+    thEl1.appendChild(imageEl);
+    
+    thEl4.appendChild(aEl);
+    tableEl.appendChild(trEl);
+}
+
+function RemoveItem(event){
+    event.preventDefault();
+    cart.splice(event.target.id,1)
+    console.log(event.target.id);
+
+}
+
+   
+    
+
+    
+    
+
+}
+
 
 
 

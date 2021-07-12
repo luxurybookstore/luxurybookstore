@@ -87,7 +87,9 @@ Book.prototype.renderbook = function (bookObj) {
 
 
 //creating array for cart
+
 let cart = [];
+
 let cartIndex=[];
 let counter = 0;
 
@@ -153,18 +155,18 @@ function carItemsRender() {
   let tableEl = document.getElementById('tablebody');
   let tablefooterEl= document.getElementById('tablef');
   
-  trEl = document.createElement('tr');
+  
   tableEl.innerHTML = '';
   tablefooterEl.innerHTML='';
 
   let totalprice=0;  
   for (let i = 0; i < cart.length; i++) {
-
-    let thEl1 = document.createElement('th');
-    let thEl2 = document.createElement('th');
-    let thEl3 = document.createElement('th');
-    let thEl5=document.createElement('th');
-    let thEl4 = document.createElement('th');
+trEl = document.createElement('tr');
+    let thEl1 = document.createElement('td');
+    let thEl2 = document.createElement('td');
+    let thEl3 = document.createElement('td');
+    let thEl5=document.createElement('td');
+    let thEl4 = document.createElement('td');
     let imageEl = document.createElement('img');
     let aEl = document.createElement('a');
     
@@ -218,6 +220,8 @@ function RemoveItem(event) {
 function settingToLocalStorage() {
   let data = JSON.stringify(cart);
   localStorage.setItem('cart', data);
+  let dataIndex=JSON.stringify(cartIndex);
+  localStorage.setItem('cartIndexnumbers',dataIndex);
 
 }
 
@@ -225,14 +229,30 @@ function settingToLocalStorage() {
 let load = function () {
   let dataArray = localStorage.getItem('cart');
   let normalObj = JSON.parse(dataArray);
+  let dataIndexnumbers=localStorage.getItem('cartIndexnumbers');
+  let normalObjIndex=JSON.parse(dataIndexnumbers);
+  
   // console.log("-------------------------------");
   // console.log(dataArray);
   console.log('-------------------------------');
   console.log(normalObj);
-
+  console.log('dataindexnumbers',dataIndexnumbers);
+  console.log('normalObjIndex',normalObjIndex.length);
+  if(dataIndexnumbers !== null){
+   cartIndex=normalObjIndex; 
+   console.log('this is the data index numbers',cartIndex);
+  }
+// console.log(dataIndexnumbers);
   if (normalObj !== null) {
-    cart = normalObj;
-    carItemsRender();
+    for (let i = 0; i < normalObjIndex.length; i++) {
+    cart[i] = books[normalObjIndex[i]];
+    
+    cart[i].quantity=normalObj[i].quantity;
+    
+    }
+    console.log(books);
+    console.log(cart);
+    carItemsRender();  
   }
 
 

@@ -69,9 +69,9 @@ Book.prototype.renderbook = function (bookObj) {
 
     divBookEl.appendChild(bookImgEl);
     divBookEl.appendChild(bookheadingEl);
-    divBookEl.appendChild(bookPriceEl);
+    
     divBookEl.appendChild(bookDescriptionEl);
-
+    divBookEl.appendChild(bookPriceEl);
     divBookEl.appendChild(buttonEl);
 
 

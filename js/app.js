@@ -1,4 +1,5 @@
 'use strict';
+
 let books = [];
 
 
@@ -8,6 +9,7 @@ function Book(path, name, category, desription, price) {
     this.description = desription;
     this.price = price;
     this.rating = 5;
+    this.quantity = 0;
     this.category = category;
     books.push(this);
 
@@ -49,7 +51,10 @@ Book.prototype.renderbook = function (bookObj) {
     let bookDescriptionEl = document.createElement('p');
     let bookImgEl = document.createElement('img');
     let buttonEl = document.createElement('button');
-
+    let quantityEl = document.createElement('input');
+    quantityEl.setAttribute('type', 'number');
+    let qId = (books.indexOf(this) + 100);
+    quantityEl.setAttribute('id', `${qId}`);
 
 
 
@@ -69,8 +74,9 @@ Book.prototype.renderbook = function (bookObj) {
 
     divBookEl.appendChild(bookImgEl);
     divBookEl.appendChild(bookheadingEl);
-    
+
     divBookEl.appendChild(bookDescriptionEl);
+    divBookEl.appendChild(quantityEl);
     divBookEl.appendChild(bookPriceEl);
     divBookEl.appendChild(buttonEl);
 
@@ -83,21 +89,60 @@ Book.prototype.renderbook = function (bookObj) {
 
 //creating array for cart
 let cart = [];
-
+let cartIndex = [];
 let counter = 0;
+
 function addToCart(event) {
-    event.preventDefault();
-
-    let productIndex = event.target.id;
-
-    cart.push(books[productIndex]);
-    console.log(cart);
-    counter++;
-    // if(!==null)
-    // carItemsRender();
-    settingToLocalStorage();
-
     
+    event.preventDefault();
+    let productIndex = event.target.id;
+    let qnum = Number(productIndex) + 100;
+
+    let qnumValue = document.getElementById(qnum).value;
+    console.log('>>pro', productIndex, '>>q', qnum, "value", qnumValue);
+
+
+    for (let i = 0; i <= cartIndex.length; i++) {
+        if (productIndex === cartIndex[i]) {
+
+            cart[i].quantity = Number(qnumValue);
+            // if(cart ==0 ){
+                settingToLocalStorage();
+            // }
+            
+            console.log(cart);
+
+            break;
+        }
+        else if (i >= cartIndex.length) {
+            cart.push(books[productIndex]);
+            cartIndex.push(productIndex);
+            //   let x=cartIndex[i];
+            //   cart[i].quantity=1;
+            cart[i].quantity = Number(qnumValue);
+            //   console.log(cart);
+            counter++;
+            // if(cartIndex.length ==0){
+                settingToLocalStorage();
+            // }
+            //   console.log('--3---');
+            break;
+        }
+        settingToLocalStorage();
+    }
+
+    // event.preventDefault();
+
+    // let productIndex = event.target.id;
+
+    // cart.push(books[productIndex]);
+    // console.log(cart);
+    // counter++;
+    // // if(!==null)
+    // // carItemsRender();
+    // settingToLocalStorage();
+
+
 }
 console.log(cart);
 let trEl;
@@ -105,40 +150,59 @@ let trEl;
 //render cart funtion
 function carItemsRender() {
     let tableEl = document.getElementById('tablebody');
-    trEl = document.createElement('tr')
-    tableEl.innerHTML = "";
+    //   let tablefooterEl= document.getElementById('tablef');
 
+    trEl = document.createElement('tr');
+    tableEl.innerHTML = '';
+    //   tablefooterEl.innerHTML='';
+
+    let totalprice = 0;
     for (let i = 0; i < cart.length; i++) {
 
-        let thEl1 = document.createElement('th')
-        let thEl2 = document.createElement('th')
-        let thEl3 = document.createElement('th')
-        let thEl4 = document.createElement('th')
-        let imageEl = document.createElement('img')
-        let aEl = document.createElement('a')
+        let thEl1 = document.createElement('th');
+        let thEl2 = document.createElement('th');
+        let thEl3 = document.createElement('th');
+        let thEl5 = document.createElement('th');
+        let thEl4 = document.createElement('th');
+        let imageEl = document.createElement('img');
+        let aEl = document.createElement('a');
 
-        imageEl.setAttribute('src', cart[i].image)
+        imageEl.setAttribute('src', cart[i].image);
         thEl2.textContent = cart[i].bookName;
-        thEl3.textContent = cart[i].price;
-        aEl.setAttribute('href', '')
-        aEl.setAttribute('id', i)
+        let cartPrice = cart[i].price * cart[i].quantity
+        thEl3.textContent = cartPrice;
+        totalprice += cartPrice;
+        thEl5.textContent = cart[i].quantity;
+
+        aEl.setAttribute('href', '');
+        aEl.setAttribute('id', i);
         aEl.textContent = 'remove';
-        aEl.addEventListener("click", RemoveItem)
+        aEl.addEventListener('click', RemoveItem);
+
         trEl.appendChild(thEl1);
         trEl.appendChild(thEl2);
+        trEl.appendChild(thEl5);
         trEl.appendChild(thEl3);
         trEl.appendChild(thEl4);
         thEl1.appendChild(imageEl);
 
         thEl4.appendChild(aEl);
         tableEl.appendChild(trEl);
-    }
 
+
+    }
+    let thFEl = document.createElement('th');
+    thFEl.textContent = totalprice;
+
+    thFEl.textContent = `the total price is ${totalprice}`
+    // tablefooterEl.appendChild(thFEl);
 
 }
 function RemoveItem(event) {
     event.preventDefault();
-    cart.splice(event.target.id, 1)
+    cart.splice(event.target.id, 1);
+    cartIndex.splice(event.target.id, 1);
+
     console.log(event.target.id);
     carItemsRender();
 
@@ -164,13 +228,15 @@ let load = function () {
 
     if (normalObj !== null) {
         cart = normalObj;
-        carItemsRender();
+        // carItemsRender();
+        
     }
 
 
 };
+// settingToLocalStorage();
 
-// load();
+load();
 
 
 

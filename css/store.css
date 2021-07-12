@@ -54,10 +54,15 @@ section{
     border: 2px solid red;
     margin-top: 20px;
 }
+h2{
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+}
 div{
     display: inline-block;
     border: 2px solid red;
-    width: 25%;
+    width: 18%;
     height: 800px;
     margin: 10px;
     text-align: center;
@@ -70,7 +75,7 @@ div h3{
 div p{
     font-family: 'Source Sans Pro', sans-serif;
 }
-div h3,p,img,button{
+div h3,p,button{
     margin-top: 10px;
 }
 div img{

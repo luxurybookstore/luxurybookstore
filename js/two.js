@@ -1,5 +1,6 @@
 'use strict';
 
-    
-    load();
-    
+load();
+carItemsRender();
+// settingToLocalStorage();
+

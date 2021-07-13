@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=ma, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/cartcss.css">
     <title>Your Cart</title>
 </head>
 
@@ -22,9 +23,37 @@
         </nav>
     </header>
     <main>
-        <section id="cartProducts">
 
-        </section>
+        <div>
+            <table id="cartTable">
+                <thead>
+                    <tr>
+                        <th>image</th>
+                        <th>book name</th>
+                        <th>quantity</th>
+                        <th>price</th>
+                        <th>remove from cart</th>
+
+
+                    </tr>
+                </thead>
+                <tbody id="tableb">
+                    <div></div>
+
+                </tbody>
+
+                <tfoot id='tablef'>
+
+                </tfoot>
+
+
+            </table>
+        </div>
+        <!-- <section id="cartProducts">
+           
+            </table>
+
+        </section> -->
         <section id="infoForm">
             <form id="myform">
                 <label for="name"> Full Name</label>
@@ -48,6 +77,7 @@
                 <input type="submit" value="Buy It Now!">
             </form>
         </section>
+
     </main>
     <footer>
         <p>Copyright &copy; 2021 by luxury book store Group,<a href="https://github.com/luxurybookstore">GithubOrg</a>
@@ -56,6 +86,11 @@
         <img src="img/twit-icon.png" alt="">
         <img src="img/insta-icon.png" alt="">
     </footer>
+
 </body>
+<script src="js/app.js"></script>
+<script src="js/two.js"></script>
+
+
 
 </html>

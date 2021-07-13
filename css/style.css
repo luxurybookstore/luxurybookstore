@@ -112,7 +112,11 @@ div{
     background-color: darkgrey;
 }
 
-
+th{
+    display: inline-block;
+    margin-left: 50px;
+    font-size: 25px;
+}
 
 
 /* img{

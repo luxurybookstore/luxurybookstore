@@ -1,6 +1,6 @@
 'use strict';
+let books = [];
 
-let books=[];
 
 function Book(path, name, category, desription, price) {
   this.bookName = name;
@@ -443,4 +443,4 @@ function generatebooks() {
   new Book('images/The Mayor of MacDougal Street.png', 'The Mayor of MacDougal Street', 'Biography', 'Dave Van Ronk (1936-2002) was one of the founding figures of the 1960s folk revival, but he was far more than that. A pioneer of modern acoustic blues, a fine songwriter and arranger, a powerful singer, and one of the most influential guitarists of the \'60s, he was also a marvelous storyteller, a peerless musical historian, and one of the most quotable figures on the Village scene. The Mayor of MacDougal Street is a first-hand account by a major player in the social and musical history of the \'50s and \'60s.', 25);
   new Book('images/I Work At A Public Library.png', 'I Work At A Public Library', 'Biography', 'From a patron\'s missing wetsuit to the scent of crab cakes wafting through the stacks, I Work at a Public Library showcases the oddities that have come across Gina Sheridan\'s circulation desk. Whether she\'s helping someone scan his face onto an online dating site or explaining why the library doesn\'t have any dragon autobiographies, Sheridan\'s bizarre tales prove that she\'s truly seen it all.', 21);
 
-};
+}

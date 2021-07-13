@@ -1,4 +1,5 @@
 'use strict';
+
 let books = [];
 
 
@@ -54,6 +55,11 @@ Book.prototype.renderbook = function (bookObj) {
   quantityEl.setAttribute('type','number');
   let qId=(books.indexOf(this)+100);
   quantityEl.setAttribute('id', `${qId}`);
+  quantityEl.setAttribute('value', 1);
+  let labelEl=document.createElement('label');
+  labelEl.setAttribute('for',`${qId}`)
+  labelEl.textContent="Quantity:";
+
 
 
 
@@ -75,6 +81,7 @@ Book.prototype.renderbook = function (bookObj) {
   divBookEl.appendChild(bookheadingEl);
   divBookEl.appendChild(bookPriceEl);
   divBookEl.appendChild(bookDescriptionEl);
+  divBookEl.appendChild(labelEl);
   divBookEl.appendChild(quantityEl);
 
   divBookEl.appendChild(buttonEl);
@@ -103,6 +110,9 @@ function loading(){
   let dataIndexnumbers=localStorage.getItem('cartIndexnumbers');
   let normalObjIndex=JSON.parse(dataIndexnumbers);
 
+  let dataCount=localStorage.getItem('count');
+  let normalObjcount=JSON.parse(dataCount);
+
   // console.log("-------------------------------");
   // console.log(dataArray);
   console.log('-------------------------------');
@@ -113,6 +123,7 @@ function loading(){
     cartIndex=normalObjIndex;
     console.log('this is the data index numbers',cartIndex);
   }
+  counter=normalObjcount;
   // console.log(dataIndexnumbers);
   if (normalObj !== null) {
     for (let i = 0; i < normalObjIndex.length; i++) {
@@ -158,7 +169,10 @@ function addToCart(event) {
       settingToLocalStorage();
       //   console.log('--3---');
       break;}
-  }}
+      }
+      renderCartCount();
+  
+  }
 //
 //   //
 //   // // books[productIndex].quantity=1;
@@ -339,11 +353,24 @@ function settingToLocalStorage() {
 
   let data = JSON.stringify(cart);
   localStorage.setItem('cart', data);
+
   let dataIndex=JSON.stringify(cartIndex);
   localStorage.setItem('cartIndexnumbers',dataIndex);
+  
+  let dataCount = JSON.stringify(counter);
+  localStorage.setItem('count', dataCount);
 
 }
 
+function renderCartCount(){
+  if(counter>0){
+    let cartContainer=document.getElementById('cartA');
+    let count=document.getElementById('itemCount');
+    count.textContent=counter;
+    cartContainer.appendChild(count);
+  }
+}
+renderCartCount();
 
 let load = function () {
   tableEl.innerHTML = '';
@@ -353,6 +380,9 @@ let load = function () {
   let dataIndexnumbers=localStorage.getItem('cartIndexnumbers');
   let normalObjIndex=JSON.parse(dataIndexnumbers);
 
+  let dataCount=localStorage.getItem('count');
+  let normalObjcount=JSON.parse(dataCount);
+ counter=normalObjcount;
   // console.log("-------------------------------");
   // console.log(dataArray);
   console.log('-------------------------------');
@@ -443,4 +473,12 @@ function generatebooks() {
   new Book('images/The Mayor of MacDougal Street.png', 'The Mayor of MacDougal Street', 'Biography', 'Dave Van Ronk (1936-2002) was one of the founding figures of the 1960s folk revival, but he was far more than that. A pioneer of modern acoustic blues, a fine songwriter and arranger, a powerful singer, and one of the most influential guitarists of the \'60s, he was also a marvelous storyteller, a peerless musical historian, and one of the most quotable figures on the Village scene. The Mayor of MacDougal Street is a first-hand account by a major player in the social and musical history of the \'50s and \'60s.', 25);
   new Book('images/I Work At A Public Library.png', 'I Work At A Public Library', 'Biography', 'From a patron\'s missing wetsuit to the scent of crab cakes wafting through the stacks, I Work at a Public Library showcases the oddities that have come across Gina Sheridan\'s circulation desk. Whether she\'s helping someone scan his face onto an online dating site or explaining why the library doesn\'t have any dragon autobiographies, Sheridan\'s bizarre tales prove that she\'s truly seen it all.', 21);
 
+}
+
+
+let storeAEl=document.getElementById('storeA');
+storeAEl.addEventListener('click',ff);
+
+function ff(){
+  location.reload();
 }

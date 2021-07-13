@@ -6,63 +6,195 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/styleAboutUs.css">
+    
     <title>About Us</title>
 </head>
 
-<body>
+<body class="overlay">
     <header>
-        <img src="./img/luxury-white.png" alt="" id="logo">
+
+        <img class="logo" src="./img/luxury-black-2.png"  alt="Luxury Book Store">
+        <!-- <div class="toggle"></div> -->
         <nav>
             <ul>
-                <li><a href="store.html">Store</a></li>
-                <li><a href="cart.html">Cart</a></li>
-                <li><a href="aboutus.html">About Us</a><span id="itemCount"></span></li>
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./store.html">Store</a></li>
+              <li><a href="#">About Us</a>
+              <li><a href="./cart.html">Cart</a></li>
             </ul>
+
+           
         </nav>
-    </header>
+      </header>
     <main >
-        <div class="mainAboutUs">
-            <img src="img/Yazeed Aloufee.png" alt="Yazeed" style="width:200px ; height:300px ;">
-            <h3>Yazeed Aloufee</h3>
-            <p>I am an electronics engineer. I have worked in education. I am building my software development career at the moment.</p>
-            <a href="https://github.com/yazeedaloufee">My Github profile</a>
+        <video src="./img/bg-vid.mp4" muted loop autoplay></video>
+
+        <div class="port-a"></div>
+
+        
+        <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img class="flipimg" src="img/Port-img-03.jpg" alt="Yazeed" style="width:280px;height:400px;border-radius: 15px;margin-top: 20px; border: 3px #776634 solid">
+                <h2>YAZEED AL-OUFEE</h2>
+              </div>
+              <div class="flip-card-back">
+                <h3>YAZEED AL-OUFEE</h3>
+                <p>I am an electronics engineer. I have worked in education. I am building my software development career at the moment.</p>
+                <br><br><br><br><br>
+                <a class="fliplink" href="https://github.com/yazeedaloufee">Visit My Github</a>
+              </div>
+            </div>
+          </div>
+
+
+
+            <!-- <div class="port-b">
+                <img src="img/Port-img-03.jpg" alt="Yazeed" style="width:200px ; height:300px ;">
+                <h3>Yazeed Aloufee</h3>
+                <p>I am an electronics engineer. I have worked in education. I am building my software development career at the moment.</p>
+                
+                <a href="https://github.com/yazeedaloufee">My Github profile</a>
+            </div> -->
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img class="flipimg" src="img/Port-img-04.jpg" alt="Mansour" style="width:280px;height:400px;border-radius: 15px;margin-top: 20px;border: 3px #776634 solid">
+                    <h2>MANSOUR AL-BATRAN</h2>
+                  </div>
+                  <div class="flip-card-back">
+                    <h3>MANSOUR AL-BATRAN</h3>
+                    <p>I am an civil engineer. I have worked in education. I am building my software development career at the moment.</p>
+                    <br><br><br><br><br>
+                    <a class="fliplink" href="https://github.com/mansouralbatran">Visit My Github</a>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+            <!-- <div class="port-b">
+                <img src="img/Port-img-04.jpg" alt="Mansour"  style="width:200px ; height:300px ;">
+                <h3>Mansour Albatran</h3>
+                <p>I am an civil engineer. I have worked in education. I am building my software development career at the moment.</p>
+                <a href="https://github.com/mansouralbatran">My Github profile</a>
+            </div> -->
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img class="flipimg" src="img/Port-img-01.jpg" alt="Areej" style="width:280px;height:400px;border-radius: 15px;margin-top: 20px;border: 3px #776634 solid">
+                    <h2>AREEJ ELAYYAN</h2>
+                  </div>
+                  <div class="flip-card-back">
+                    <h3>AREEJ ELAYYAN</h3>
+                    <p>A graduate in software engineering with a passion for all things related to technology and programming. Worked in IT teaching and supervision, and looking for new opportunities to share my skills and passion while expanding my horizons.</p>
+                    <br><br><br><br><br>
+                    <a class="fliplink" href="https://github.com/ElayyanAreej">Visit My Github</a>
+                  </div>
+                </div>
+              </div>
+
+
+            <!-- <div class="port-b">
+                <img src="img/Port-img-01.jpg" alt="Areej" style="width:200px ; height:300px ;">
+                <h3>Areej Elayyan</h3>
+                <p>A graduate in software engineering with a passion for all things related to technology and programming. Worked in IT teaching and supervision, and looking for new opportunities to share my skills and passion while expanding my horizons.</p>
+                <a href="https://github.com/ElayyanAreej">My Github profile</a>
+            </div> -->
+
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img class="flipimg" src="img/Port-img-05.jpg" alt="Abdullah" style="width:280px;height:400px;border-radius: 15px;margin-top: 20px;border: 3px #776634 solid">
+                    <h2>ABDULLAH NAZZAL</h2>
+                  </div>
+                  <div class="flip-card-back">
+                    <h3>ABDULLAH NAZZAL</h3>
+                    <p>This is Abdullah Nazzal I'm 25 years old, I'm graduated from the Jadara University, majored Software Engineering.</p>
+                    <br><br><br><br><br>
+                    <a class="fliplink" href="https://github.com/abdullahnazzal">Visit My Github</a>
+                  </div>
+                </div>
+              </div>
+
+
+            <!-- <div class="port-b">
+                <img src="img/Port-img-05.jpg" alt="Abdullah">
+                <h3>Abdullah Nazzal</h3>
+                <p> This is Abdullah Nazzal I'm 25 years old, I'm graduated from the Jadara University, majored Software Engineering.</p>
+                <a href="github.com/abdullahnazzal">My Github profile</a>
+            </div> -->
+
+
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img class="flipimg" src="img/Port-img-02.jpg" alt="Ala-aburish" style="width:280px;height:400px;border-radius: 15px;margin-top: 20px;border: 3px #776634 solid">
+                    <h2>ALA ABU AL-RISH</h2>
+                  </div>
+                  <div class="flip-card-back">
+                    <h3>ALA ABU AL-RISH</h3>
+                    <p>A visionary that handles global data systems and building enterprises infrastructure. Has a total of 7+ years experience as a CTO in the IT and multimedia industry. </p>
+                    <br><br><br><br><br>
+                    <a class="fliplink" href="https://github.com/alaa-rish">Visit My Github</a>
+                  </div>
+                </div>
+              </div>
+
+
+            <!-- <div class="port-b">
+                <img src="img/Port-img-02.jpg" alt="ala-aburish">
+                <h3>Ala Aburish</h3>
+                <p>This is Ala Abu Al-Rish, I’m 33 years old. A visionary that handles global data systems and building enterprises infrastructure. Has a total of 7+ years experience as a CTO in the IT and multimedia industry.</p>
+                <a href="https://github.com/alaa-rish">My Github profile</a>
+                </div>
+                -->
+
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img class="flipimg" src="img/Port-img-06.jpg" alt="SARA" style="width:280px;height:400px;border-radius: 15px;margin-top: 20px;border: 3px #776634 solid">
+                        <h2>SARA BASAM</h2>
+                      </div>
+                      <div class="flip-card-back">
+                        <h3>SARA BASAM</h3>
+                        <p>sara basem al khtibeh studied civil engineering 27 years old worked as site engineer for two years but now looking forward to find new career in programing.</p>
+                        <br><br><br><br><br>
+                        <a class="fliplink" href="https://github.com/sarakhatibeh">Visit My Github</a>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+<!-- 
+                <div class="port-b">
+                    <img src="img/Port-img-06.jpg" alt="Sara Basem">
+                    <h3>Sara Basem</h3>
+                    <a href="https://github.com/sarakhatibeh">My Github profile</a>
+                </div> -->
+            </div>
         </div>
-        <div>
-            <img src="img/mansor.jpg" alt="Mansour"  style="width:200px ; height:300px ;">
-            <h3>Mansour Albatran</h3>
-            <p>I am an civil engineer. I have worked in education. I am building my software development career at the moment.</p>
-            <a href="https://github.com/mansouralbatran">My Github profile</a>
-        </div>
-        <div>
-            <img src="img/areej.jpg" alt="Areej" style="width:200px ; height:300px ;">
-            <h3>Areej Elayyan</h3>
-            <p>A graduate in software engineering with a passion for all things related to technology and programming. Worked in IT teaching and supervision, and looking for new opportunities to share my skills and passion while expanding my horizons.</p>
-            <a href="https://github.com/ElayyanAreej">My Github profile</a>
-        </div>
-        <div>
-            <img src="img/Abdullah.jpg" alt="Abdullah">
-            <h3>Abdullah Nazzal</h3>
-            <p> This is Abdullah Nazzal I'm 25 years old, I'm graduated from the Jadara University, majored Software Engineering.</p>
-            <a href="github.com/abdullahnazzal">My Github profile</a>
-        </div>
-        <div>
-            <img src="img/ala-aburish.jpg" alt="ala-aburish">
-            <h3>Ala Aburish</h3>
-            <p>This is Ala Abu Al-Rish, I’m 33 years old. A visionary that handles global data systems and building enterprises infrastructure. Has a total of 7+ years experience as a CTO in the IT and multimedia industry.</p>
-            <a href="https://github.com/alaa-rish">My Github profile</a>
+       
+        <div class="footer">
+            <ul class="social">
+                <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+                <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+                <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+                <li class="copy">Copyright &copy; 2021 by luxury book store Group.&nbsp;&nbsp;<a href="https://github.com/luxurybookstore">GithubOrg</a></li>
+              </ul>
         </div>
     </main>
-    <footer>
-        <p>Copyright &copy; 2021 by luxury book store Group,<a href="https://github.com/luxurybookstore">GithubOrg</a>
-        </p>
-
-        <img src="img/fb-icon.png" alt="">
-        <img src="img/twit-icon.png" alt="">
-        <img src="img/insta-icon.png" alt="">
-
-    </footer>
+    <script>/js/app.js</script>
+    <script src="https://kit.fontawesome.com/41d08e4a4c.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

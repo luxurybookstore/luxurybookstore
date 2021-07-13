@@ -11,50 +11,49 @@
 </head>
 
 <body>
-    <header id="indexHead">
-        <img class="bookIcon" src="./img/luxury-white.png" alt="" id="logo">
-        <nav>
-            <ul>
-                <li><a href="store.html">Store</a></li>
-                <li><a href="cart.html">Cart</a></li>
-                <li><a href="aboutus.html">About Us</a><span id="itemCount"></span></li>
-            </ul>
-        </nav>
-    </header>
+    <section class="showcase">
+        <header>
+          <img class="logo" src="./img/luxury-white-1.png"  alt="Luxury Book Store">
+          <!-- <div class="toggle"></div> -->
+          <nav>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="./store.html">Store</a></li>
+                <li><a href="./aboutus.html">About Us</a>
+                <li><a href="./cart.html">Cart</a></li>
+              </ul>
 
-    <main id="indexmain">
-
-        <div id="bg-vid">
-        <video autoplay muted loop id="myVideo">
-        <source src="./img/bg-vid.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-         </video>
-
+             
+          </nav>
+        </header>
+        <video src="./img/bg-vid.mp4" muted loop autoplay></video>
+        <div class="overlay"></div>
+        <div class="text">
+          <h2>Never Stop</h2> 
+          <h3>Reading</h3>
+          <p> Shop Your Favorite Books Now From Luxury Book Store. Get Doorstep Delivery. Many Exclusive Discounts & Payment Options Available. Buy Your Book Today.</p>
+          
+          <a href="./store.html">SHOP NOW</a>
         </div>
-        <div class="indexcontent">
-
-         <section id="indexcon1">
-             <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A nostrum autem quaerat doloremque dolorem
-            modi aliquid cum earum omnis praesentium sed aspernatur, explicabo atque minus deleniti fugit officia
-            beatae ipsam.</h2>
-         </section>
-        <section id="indexcon1">
-            <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A nostrum autem quaerat doloremque dolorem
-            modi aliquid cum earum omnis praesentium sed aspernatur, explicabo atque minus deleniti fugit officia
-            beatae ipsam.</h2>
-        </section>
-
+      
         </div>
-        
-    </main>
-    <footer>
-        <p>Copyright &copy; 2021 by luxury book store Group,<a href="https://github.com/luxurybookstore">GithubOrg</a>
-        </p>
-        <img src="img/fb-icon.png" alt="">
-        <img src="img/twit-icon.png" alt="">
-        <img src="img/insta-icon.png" alt="">
-    </footer>
+        <!-- <img src="./img/luxury-white-1.png" alt=""> -->
+        <ul class="social">
+          <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+          <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+          <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+          <li class="copy">Copyright &copy; 2021 by luxury book store Group.&nbsp;&nbsp;<a href="https://github.com/luxurybookstore">GithubOrg</a></li>
+        </ul>
+      </section>
+      <!-- <div class="menu">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="./store.html">STORE</a></li>
+          <li><a href="./aboutus.html">ABOUT US</a>
+          <li><a href="./cart.html">CART</a></li>
+
+        </ul>
+      </div> -->
     <script src="js/app.js"></script>
 </body>
-
 </html>

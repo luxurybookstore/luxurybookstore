@@ -1,6 +1,6 @@
 'use strict';
-let books = [];
 
+let books=[];
 
 function Book(path, name, category, desription, price) {
   this.bookName = name;
@@ -96,34 +96,34 @@ let tableEl = document.getElementById('tableb');
 
 
 function loading(){
-  
-        
-    let dataArray = localStorage.getItem('cart');
-    let normalObj = JSON.parse(dataArray);
-    let dataIndexnumbers=localStorage.getItem('cartIndexnumbers');
-    let normalObjIndex=JSON.parse(dataIndexnumbers);
-    
-    // console.log("-------------------------------");
-    // console.log(dataArray);
-    console.log('-------------------------------');
-    // console.log(normalObj);
-    // console.log('dataindexnumbers',dataIndexnumbers);
-    // console.log('normalObjIndex',normalObjIndex.length);
-    if(dataIndexnumbers !== null){
-     cartIndex=normalObjIndex; 
-     console.log('this is the data index numbers',cartIndex);
-    }
+
+
+  let dataArray = localStorage.getItem('cart');
+  let normalObj = JSON.parse(dataArray);
+  let dataIndexnumbers=localStorage.getItem('cartIndexnumbers');
+  let normalObjIndex=JSON.parse(dataIndexnumbers);
+
+  // console.log("-------------------------------");
+  // console.log(dataArray);
+  console.log('-------------------------------');
+  // console.log(normalObj);
+  // console.log('dataindexnumbers',dataIndexnumbers);
+  // console.log('normalObjIndex',normalObjIndex.length);
+  if(dataIndexnumbers !== null){
+    cartIndex=normalObjIndex;
+    console.log('this is the data index numbers',cartIndex);
+  }
   // console.log(dataIndexnumbers);
-    if (normalObj !== null) {
-      for (let i = 0; i < normalObjIndex.length; i++) {
+  if (normalObj !== null) {
+    for (let i = 0; i < normalObjIndex.length; i++) {
       cart[i] = books[normalObjIndex[i]];
-      
+
       cart[i].quantity=normalObj[i].quantity;
-      
-  
-      }
+
+
+    }
     counter=normalObj.length;
-    }}
+  }}
 
 
 
@@ -136,47 +136,47 @@ function addToCart(event) {
   let qnumValue=document.getElementById(qnum).value;
   // console.log('>>pro',productIndex,'>>q',qnum,"value",qnumValue);
 
-  
 
 
-    for (let i = 0; i <= cartIndex.length; i++) {
-      if (productIndex === cartIndex[i]) {
-        
-        cart[i].quantity=Number(qnumValue);
-        settingToLocalStorage();
-        console.log(cart);
-        
-        break;}
-      else if(i>=cartIndex.length){
-        cart.push(books[productIndex]);
-        cartIndex.push(productIndex);
+
+  for (let i = 0; i <= cartIndex.length; i++) {
+    if (productIndex === cartIndex[i]) {
+
+      cart[i].quantity=Number(qnumValue);
+      settingToLocalStorage();
+      console.log(cart);
+
+      break;}
+    else if(i>=cartIndex.length){
+      cart.push(books[productIndex]);
+      cartIndex.push(productIndex);
       //   let x=cartIndex[i];
       //   cart[i].quantity=1;
       cart[i].quantity=Number(qnumValue);
       //   console.log(cart);
-        counter++;
-        settingToLocalStorage();
+      counter++;
+      settingToLocalStorage();
       //   console.log('--3---');
-        break;}
-      }}
-  // 
-  //   // 
-  //   // // books[productIndex].quantity=1;
-  //   // cart[0].quantity=1;
-  //   // console.log(cart);
-  //   // counter++;
-  //   // settingToLocalStorage();
-    
-  //   cart.push(books[productIndex]);
-  //   cartIndex.push(productIndex);
-  //   cart[counter].quantity=Number(qnumValue);
-  //   console.log(cart);
-  //   console.log(cartIndex);
-  //   counter++;
-  //   // if(!==null)
-  //   // carItemsRender();
-  //   settingToLocalStorage();
-  // }
+      break;}
+  }}
+//
+//   //
+//   // // books[productIndex].quantity=1;
+//   // cart[0].quantity=1;
+//   // console.log(cart);
+//   // counter++;
+//   // settingToLocalStorage();
+
+//   cart.push(books[productIndex]);
+//   cartIndex.push(productIndex);
+//   cart[counter].quantity=Number(qnumValue);
+//   console.log(cart);
+//   console.log(cartIndex);
+//   counter++;
+//   // if(!==null)
+//   // carItemsRender();
+//   settingToLocalStorage();
+// }
 
 
 
@@ -191,66 +191,66 @@ function renderAllItems(){
 
   for (let i = 0; i < cart.length; i++) {
     cart[i].carItemsRender();
-    
+
   }
 }
-  
-  
+
+
 //render cart funtion
 Book.prototype.carItemsRender=function(){
-  
+
   trEl = document.createElement('tr');
-    let thEl1 = document.createElement('td');
-    let thEl2 = document.createElement('td');
-    let thEl3 = document.createElement('td');
-    let thEl5=document.createElement('td');
-    let thEl4 = document.createElement('td');
-    let imageEl = document.createElement('img');
-    let aEl = document.createElement('a');
-    
-    imageEl.setAttribute('src', this.image);
-    thEl2.textContent = this.bookName;
-    let cartPrice=this.price*this.quantity;
-    thEl3.textContent = cartPrice;
-   
-    thEl5.textContent=this.quantity;
-    
-    aEl.setAttribute('href', '');
-    aEl.setAttribute('id', cart.indexOf(this));
-    console.log('cart.indexofthis',cart.indexOf(this));
-    aEl.textContent = 'remove';
-    aEl.addEventListener('click', RemoveItem);
+  let thEl1 = document.createElement('td');
+  let thEl2 = document.createElement('td');
+  let thEl3 = document.createElement('td');
+  let thEl5=document.createElement('td');
+  let thEl4 = document.createElement('td');
+  let imageEl = document.createElement('img');
+  let aEl = document.createElement('a');
 
-    trEl.appendChild(thEl1);
-    trEl.appendChild(thEl2);
-    trEl.appendChild(thEl5);
-    trEl.appendChild(thEl3);
-    trEl.appendChild(thEl4);
-    thEl1.appendChild(imageEl);
+  imageEl.setAttribute('src', this.image);
+  thEl2.textContent = this.bookName;
+  let cartPrice=this.price*this.quantity;
+  thEl3.textContent = cartPrice;
 
-    thEl4.appendChild(aEl);
-    tableEl.appendChild(trEl);
-   
-    overallPrice();
-}
+  thEl5.textContent=this.quantity;
+
+  aEl.setAttribute('href', '');
+  aEl.setAttribute('id', cart.indexOf(this));
+  console.log('cart.indexofthis',cart.indexOf(this));
+  aEl.textContent = 'remove';
+  aEl.addEventListener('click', RemoveItem);
+
+  trEl.appendChild(thEl1);
+  trEl.appendChild(thEl2);
+  trEl.appendChild(thEl5);
+  trEl.appendChild(thEl3);
+  trEl.appendChild(thEl4);
+  thEl1.appendChild(imageEl);
+
+  thEl4.appendChild(aEl);
+  tableEl.appendChild(trEl);
+
+  overallPrice();
+};
 
 let tablefooterEl= document.getElementById('tablef');
 let thFEl= document.createElement('th');
 function overallPrice(){
   let totalprice=0;
-  
+
 
 
   for (let i = 0; i < cart.length; i++) {
     totalprice+=cart[i].price*cart[i].quantity;
-    
-  }
- 
-thFEl.textContent=totalprice;
 
-thFEl.textContent=`the total price is ${totalprice}`
-tablefooterEl.appendChild(thFEl);
-  
+  }
+
+  thFEl.textContent=totalprice;
+
+  thFEl.textContent=`the total price is ${totalprice}`;
+  tablefooterEl.appendChild(thFEl);
+
 }
 
 
@@ -262,12 +262,12 @@ tablefooterEl.appendChild(thFEl);
 // function carItemsRender() {
 //   let tableEl = document.getElementById('tablebody');
 //   let tablefooterEl= document.getElementById('tablef');
-  
-  
+
+
 //   tableEl.innerHTML = '';
 //   tablefooterEl.innerHTML='';
 
-//   let totalprice=0;  
+//   let totalprice=0;
 //   for (let i = 0; i < cart.length; i++) {
 // trEl = document.createElement('tr');
 //     let thEl1 = document.createElement('td');
@@ -277,7 +277,7 @@ tablefooterEl.appendChild(thFEl);
 //     let thEl4 = document.createElement('td');
 //     let imageEl = document.createElement('img');
 //     let aEl = document.createElement('a');
-    
+
 
 
 //     imageEl.setAttribute('src', cart[i].image);
@@ -286,7 +286,7 @@ tablefooterEl.appendChild(thFEl);
 //     thEl3.textContent = cartPrice;
 //     totalprice+=cartPrice;
 //     thEl5.textContent=cart[i].quantity;
-    
+
 //     aEl.setAttribute('href', '');
 //     aEl.setAttribute('id', i);
 //     aEl.textContent = 'remove';
@@ -325,10 +325,10 @@ function RemoveItem(event) {
   //  cart[i].carItemsRender();
   //   totalprice+=cart[i].price;
   // }
-  
+
   overallPrice();
   renderAllItems();
- 
+
 
   counter--;
   settingToLocalStorage();
@@ -336,7 +336,7 @@ function RemoveItem(event) {
 }
 
 function settingToLocalStorage() {
-  
+
   let data = JSON.stringify(cart);
   localStorage.setItem('cart', data);
   let dataIndex=JSON.stringify(cartIndex);
@@ -347,12 +347,12 @@ function settingToLocalStorage() {
 
 let load = function () {
   tableEl.innerHTML = '';
- 
+
   let dataArray = localStorage.getItem('cart');
   let normalObj = JSON.parse(dataArray);
   let dataIndexnumbers=localStorage.getItem('cartIndexnumbers');
   let normalObjIndex=JSON.parse(dataIndexnumbers);
-  
+
   // console.log("-------------------------------");
   // console.log(dataArray);
   console.log('-------------------------------');
@@ -360,23 +360,23 @@ let load = function () {
   console.log('dataindexnumbers',dataIndexnumbers);
   console.log('normalObjIndex',normalObjIndex.length);
   if(dataIndexnumbers !== null){
-   cartIndex=normalObjIndex; 
-   console.log('this is the data index numbers',cartIndex);
+    cartIndex=normalObjIndex;
+    console.log('this is the data index numbers',cartIndex);
   }
-// console.log(dataIndexnumbers);
+  // console.log(dataIndexnumbers);
   if (normalObj !== null) {
     for (let i = 0; i < normalObjIndex.length; i++) {
-    cart[i] = books[normalObjIndex[i]];
-    
-    cart[i].quantity=normalObj[i].quantity;
-    settingToLocalStorage();
-     cart[i].carItemsRender();  
+      cart[i] = books[normalObjIndex[i]];
+
+      cart[i].quantity=normalObj[i].quantity;
+      settingToLocalStorage();
+      cart[i].carItemsRender();
     }
     console.log(books);
     console.log(cart);
-   
+
   }
-  overallPrice()
+  overallPrice();
 
 
 
@@ -443,4 +443,4 @@ function generatebooks() {
   new Book('images/The Mayor of MacDougal Street.png', 'The Mayor of MacDougal Street', 'Biography', 'Dave Van Ronk (1936-2002) was one of the founding figures of the 1960s folk revival, but he was far more than that. A pioneer of modern acoustic blues, a fine songwriter and arranger, a powerful singer, and one of the most influential guitarists of the \'60s, he was also a marvelous storyteller, a peerless musical historian, and one of the most quotable figures on the Village scene. The Mayor of MacDougal Street is a first-hand account by a major player in the social and musical history of the \'50s and \'60s.', 25);
   new Book('images/I Work At A Public Library.png', 'I Work At A Public Library', 'Biography', 'From a patron\'s missing wetsuit to the scent of crab cakes wafting through the stacks, I Work at a Public Library showcases the oddities that have come across Gina Sheridan\'s circulation desk. Whether she\'s helping someone scan his face onto an online dating site or explaining why the library doesn\'t have any dragon autobiographies, Sheridan\'s bizarre tales prove that she\'s truly seen it all.', 21);
 
-}
+};

@@ -31,11 +31,13 @@ const swalWithBootstrapButtons = Swal.mixin({
         'success'
       )
       // we should clear the localsorage here but it is not working with me 
-    //   localStorage.clear();
-    // call those functions again
+    localStorage.clear();
+    location.reload();
+   // call those functions again
+   console.log("hi");
     //   overallPrice();
     //   renderAllItems();
-    //   counter=0;
+      counter=0;
     } else if (
       /* Read more about handling dismissals below */
       result.dismiss === Swal.DismissReason.cancel
@@ -49,6 +51,5 @@ const swalWithBootstrapButtons = Swal.mixin({
   })
 
 };
-
 
 // });

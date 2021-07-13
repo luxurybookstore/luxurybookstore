@@ -357,8 +357,8 @@ let load = function () {
   // console.log(dataArray);
   console.log('-------------------------------');
   console.log(normalObj);
-  console.log('dataindexnumbers',dataIndexnumbers);
-  console.log('normalObjIndex',normalObjIndex.length);
+  // console.log('dataindexnumbers',dataIndexnumbers);
+  // console.log('normalObjIndex',normalObjIndex.length);
   if(dataIndexnumbers !== null){
     cartIndex=normalObjIndex;
     console.log('this is the data index numbers',cartIndex);

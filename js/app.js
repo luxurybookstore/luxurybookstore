@@ -47,11 +47,12 @@ Book.prototype.renderbook = function (bookObj) {
   let bookheadingEl = document.createElement('h3');
   let bookPriceEl = document.createElement('p');
   let bookDescriptionEl = document.createElement('p');
-  let formel =document.createElement('form');
+  let formel = document.createElement('form');
   // formel.setAttribute('method', 'post');
   // formel.setAttribute('action', 'submit.php');
   let qountityel = document.createElement('input');
   qountityel.setAttribute('type', 'number');
+  qountityel.setAttribute('name', 'quantityname');
   let submitEl = document.createElement('input');
   submitEl.setAttribute('type', 'submit');
   submitEl.setAttribute('value', 'Add to cart');
@@ -75,7 +76,7 @@ Book.prototype.renderbook = function (bookObj) {
   // buttonEl.addEventListener('click',carItemsRender);
 
 
-  
+
 
 
   divBookEl.appendChild(bookImgEl);
@@ -94,25 +95,40 @@ Book.prototype.renderbook = function (bookObj) {
 
 //creating array for cart
 let carts = [];
+let indexcarts = [];
+let qountityes = [];
 
-function addToCart (event){
+function addToCart(event) {
   event.preventDefault();
   carts.push(books[event.target.id]);
-
+  indexcarts.push(event.target.id);
+  qountityes.push(event.target.quantityname.value);
   console.log(event.target.id);
   console.log(carts);
-  // carts.bookName= books[event.target.id].bookName;
-  // carts.image=books[event.target.id].image;
-  // carts.price=books[event.target.id].price;
-  // qountity=0;
+  console.log(indexcarts);
+  console.log(qountityes);
+  savecartsToLocalStorage();
+  saveindexToLocalStorage();
+  savequantityToLocalStorage();
 
 
 }
-
+function savecartsToLocalStorage() {
+  let data = JSON.stringify(carts);
+  localStorage.setItem('carts', data);
+}
+function saveindexToLocalStorage() {
+  let data = JSON.stringify(indexcarts);
+  localStorage.setItem('indexcarts', data);
+}
+function savequantityToLocalStorage() {
+  let data = JSON.stringify(qountityes);
+  localStorage.setItem('qountityes', data);
+}
 
 // let counter = 0;
 // function addToCart(event) {
-  // event.preventDefault();
+// event.preventDefault();
 
 //   let productIndex = event.target.id;
 
@@ -177,7 +193,6 @@ function addToCart (event){
 //   let data = JSON.stringify(cart);
 //   localStorage.setItem('cart', data);
 
-// }
 
 
 // let load = function () {

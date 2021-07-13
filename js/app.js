@@ -88,10 +88,45 @@ Book.prototype.renderbook = function (bookObj) {
 
 //creating array for cart
 
-let cart = [];
+let cart =   [];
 
 let cartIndex=[];
 let counter = 0;
+let tableEl = document.getElementById('tableb');
+
+
+function loading(){
+  
+        
+    let dataArray = localStorage.getItem('cart');
+    let normalObj = JSON.parse(dataArray);
+    let dataIndexnumbers=localStorage.getItem('cartIndexnumbers');
+    let normalObjIndex=JSON.parse(dataIndexnumbers);
+    
+    // console.log("-------------------------------");
+    // console.log(dataArray);
+    console.log('-------------------------------');
+    // console.log(normalObj);
+    // console.log('dataindexnumbers',dataIndexnumbers);
+    // console.log('normalObjIndex',normalObjIndex.length);
+    if(dataIndexnumbers !== null){
+     cartIndex=normalObjIndex; 
+     console.log('this is the data index numbers',cartIndex);
+    }
+  // console.log(dataIndexnumbers);
+    if (normalObj !== null) {
+      for (let i = 0; i < normalObjIndex.length; i++) {
+      cart[i] = books[normalObjIndex[i]];
+      
+      cart[i].quantity=normalObj[i].quantity;
+      
+  
+      }
+    counter=normalObj.length;
+    }}
+
+
+
 
 function addToCart(event) {
   event.preventDefault();
@@ -99,7 +134,7 @@ function addToCart(event) {
   let qnum=Number(productIndex)+100;
 
   let qnumValue=document.getElementById(qnum).value;
-  console.log('>>pro',productIndex,'>>q',qnum,"value",qnumValue);
+  // console.log('>>pro',productIndex,'>>q',qnum,"value",qnumValue);
 
   
 
@@ -123,10 +158,9 @@ function addToCart(event) {
         settingToLocalStorage();
       //   console.log('--3---');
         break;}
-    }
-  // else{
-  //   // cart.push(books[productIndex]);
-  //   // cartIndex.push(productIndex);
+      }}
+  // 
+  //   // 
   //   // // books[productIndex].quantity=1;
   //   // cart[0].quantity=1;
   //   // console.log(cart);
@@ -146,22 +180,26 @@ function addToCart(event) {
 
 
 
-}
+
 console.log(cart);
 let trEl;
 
-//render cart funtion
-function carItemsRender() {
-  let tableEl = document.getElementById('tablebody');
-  let tablefooterEl= document.getElementById('tablef');
-  
-  
-  tableEl.innerHTML = '';
-  tablefooterEl.innerHTML='';
+//over all items a function to render all items in cart after remove or when ever
 
-  let totalprice=0;  
+function renderAllItems(){
+  tableEl.innerHTML = '';
+
   for (let i = 0; i < cart.length; i++) {
-trEl = document.createElement('tr');
+    cart[i].carItemsRender();
+    
+  }
+}
+  
+  
+//render cart funtion
+Book.prototype.carItemsRender=function(){
+  
+  trEl = document.createElement('tr');
     let thEl1 = document.createElement('td');
     let thEl2 = document.createElement('td');
     let thEl3 = document.createElement('td');
@@ -170,21 +208,18 @@ trEl = document.createElement('tr');
     let imageEl = document.createElement('img');
     let aEl = document.createElement('a');
     
-
-
-    imageEl.setAttribute('src', cart[i].image);
-    thEl2.textContent = cart[i].bookName;
-    let cartPrice=cart[i].price*cart[i].quantity
+    imageEl.setAttribute('src', this.image);
+    thEl2.textContent = this.bookName;
+    let cartPrice=this.price*this.quantity;
     thEl3.textContent = cartPrice;
-    totalprice+=cartPrice;
-    thEl5.textContent=cart[i].quantity;
+   
+    thEl5.textContent=this.quantity;
     
     aEl.setAttribute('href', '');
-    aEl.setAttribute('id', i);
+    aEl.setAttribute('id', cart.indexOf(this));
+    console.log('cart.indexofthis',cart.indexOf(this));
     aEl.textContent = 'remove';
     aEl.addEventListener('click', RemoveItem);
-
-
 
     trEl.appendChild(thEl1);
     trEl.appendChild(thEl2);
@@ -195,22 +230,105 @@ trEl = document.createElement('tr');
 
     thEl4.appendChild(aEl);
     tableEl.appendChild(trEl);
-  }
+   
+    overallPrice();
+}
+
+let tablefooterEl= document.getElementById('tablef');
 let thFEl= document.createElement('th');
+function overallPrice(){
+  let totalprice=0;
+  
+
+
+  for (let i = 0; i < cart.length; i++) {
+    totalprice+=cart[i].price*cart[i].quantity;
+    
+  }
+ 
 thFEl.textContent=totalprice;
 
 thFEl.textContent=`the total price is ${totalprice}`
 tablefooterEl.appendChild(thFEl);
-
-
+  
 }
+
+
+
+
+
+
+
+// function carItemsRender() {
+//   let tableEl = document.getElementById('tablebody');
+//   let tablefooterEl= document.getElementById('tablef');
+  
+  
+//   tableEl.innerHTML = '';
+//   tablefooterEl.innerHTML='';
+
+//   let totalprice=0;  
+//   for (let i = 0; i < cart.length; i++) {
+// trEl = document.createElement('tr');
+//     let thEl1 = document.createElement('td');
+//     let thEl2 = document.createElement('td');
+//     let thEl3 = document.createElement('td');
+//     let thEl5=document.createElement('td');
+//     let thEl4 = document.createElement('td');
+//     let imageEl = document.createElement('img');
+//     let aEl = document.createElement('a');
+    
+
+
+//     imageEl.setAttribute('src', cart[i].image);
+//     thEl2.textContent = cart[i].bookName;
+//     let cartPrice=cart[i].price*cart[i].quantity
+//     thEl3.textContent = cartPrice;
+//     totalprice+=cartPrice;
+//     thEl5.textContent=cart[i].quantity;
+    
+//     aEl.setAttribute('href', '');
+//     aEl.setAttribute('id', i);
+//     aEl.textContent = 'remove';
+//     aEl.addEventListener('click', RemoveItem);
+
+
+
+//     trEl.appendChild(thEl1);
+//     trEl.appendChild(thEl2);
+//     trEl.appendChild(thEl5);
+//     trEl.appendChild(thEl3);
+//     trEl.appendChild(thEl4);
+//     thEl1.appendChild(imageEl);
+
+//     thEl4.appendChild(aEl);
+//     tableEl.appendChild(trEl);
+//   }
+// let thFEl= document.createElement('th');
+// thFEl.textContent=totalprice;
+
+// thFEl.textContent=`the total price is ${totalprice}`
+// tablefooterEl.appendChild(thFEl);
+
+
+// }
 function RemoveItem(event) {
   event.preventDefault();
   cart.splice(event.target.id, 1);
   cartIndex.splice(event.target.id, 1);
+  // tableEl.innerHTML = '';
+  // tablefooterEl= '';
+  // totalprice=0;
 
-  console.log(event.target.id);
-  carItemsRender();
+  // console.log(event.target.id);
+  // for (let i = 0; i < cart.length; i++) {
+  //  cart[i].carItemsRender();
+  //   totalprice+=cart[i].price;
+  // }
+  
+  overallPrice();
+  renderAllItems();
+ 
 
   counter--;
   settingToLocalStorage();
@@ -218,6 +336,7 @@ function RemoveItem(event) {
 }
 
 function settingToLocalStorage() {
+  
   let data = JSON.stringify(cart);
   localStorage.setItem('cart', data);
   let dataIndex=JSON.stringify(cartIndex);
@@ -227,6 +346,8 @@ function settingToLocalStorage() {
 
 
 let load = function () {
+  tableEl.innerHTML = '';
+ 
   let dataArray = localStorage.getItem('cart');
   let normalObj = JSON.parse(dataArray);
   let dataIndexnumbers=localStorage.getItem('cartIndexnumbers');
@@ -248,12 +369,15 @@ let load = function () {
     cart[i] = books[normalObjIndex[i]];
     
     cart[i].quantity=normalObj[i].quantity;
-    
+    settingToLocalStorage();
+     cart[i].carItemsRender();  
     }
     console.log(books);
     console.log(cart);
-    carItemsRender();  
+   
   }
+  overallPrice()
+
 
 
 };

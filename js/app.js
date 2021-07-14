@@ -151,14 +151,11 @@ function addToCart(event) {
   let qnumValue=document.getElementById(qnum).value;
   // console.log('>>pro',productIndex,'>>q',qnum,"value",qnumValue);
 
-
-
-
   for (let i = 0; i <= cartIndex.length; i++) {
     if (productIndex === cartIndex[i]) {
-
       cart[i].quantity=Number(qnumValue);
       settingToLocalStorage();
+      alert("You already Have "+ cart[i].bookName);
       console.log(cart);
 
       break;}

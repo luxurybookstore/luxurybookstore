@@ -165,30 +165,34 @@ div {
 }
 p{
   font-size: 10pt;
-  height: 300px;
+  height: 50px;
   text-align: justify;
   min-width: min-content;
+  overflow: hidden;
 }
 
 input{
-  position: absolute;
+  /* position: absolute; */
+
   bottom: 0;
-  border: none;
+  border: 1px solid #D3B55A;
   margin-top: 100px ;
   width: 50px;
   height: 50px;
-  float: left;
+  /* float: left; */
 }
 
 button{
+
   font-weight: bold;
   border-style: none;
   width: 100px;
   height: 50px;
   margin-left: 20px;
 background-color: #D3B55A;
-float: right;
-position: absolute;
+/* float: right; */
+/* position: absolute; */
+text-align: center;
 bottom: 0;
 }
 

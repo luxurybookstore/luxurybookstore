@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=ma, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
     <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <link rel="stylesheet" href="css/cartcss.css">
     <title>Your Cart</title>
 </head>
@@ -17,9 +19,9 @@
         <nav>
             <ul>
            <li><a href="store.html">Store</a></li> 
-            <li><a href="cart.html">Cart</a></li>
-            <li><a href="aboutus.html">About Us</a><span id="itemCount"></span></li>
-            </ul>
+            <li><a href="cart.html" id="cartA">Cart</a><span id="itemCount"></span></li>
+            <li><a href="aboutus.html">About Us</a></span></li>
+           </ul>
         </nav>
     </header>
     <main>
@@ -57,10 +59,10 @@
         <section id="infoForm">
             <form id="myform">
                 <label for="name"> Full Name</label>
-                <input type="text" id="name" name="name" placeholder="Your Name">
+                <input type="text" id="name" name="name" placeholder="Your Name" required >
 
                 <label for="address"> Address</label>
-                <input type="text" id="address" name="address" placeholder="Your Address">
+                <input type="text" id="address" name="address" placeholder="Your Address" required>
                 <!--     
                 <label for="fname">Accepted Cards</label>
                 <div class="icon-container">
@@ -71,13 +73,17 @@
                 </div> -->
 
                 <label for="cardnumber">Credit card number</label>
-                <input type="text" id="cardnumber" name="cardnumber" placeholder="1111-2222-3333-4444">
+                <input type="text" id="cardnumber" name="cardnumber" placeholder="1111-2222-3333-4444" required>
 
 
-                <input type="submit" value="Buy It Now!">
+                <!-- <input type="submit" value="Buy It Now!" id="btnProcessRequest"> -->
+              
+                <button id="btnProcessRequest">
+                    Buy It Now!
+                  </button>
             </form>
-        </section>
-
+         </section>
+           
     </main>
     <footer>
         <p>Copyright &copy; 2021 by luxury book store Group,<a href="https://github.com/luxurybookstore">GithubOrg</a>

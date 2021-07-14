@@ -316,9 +316,12 @@ Book.prototype.carItemsRender = function () {
   let thEl4 = document.createElement('td');
   let imageEl = document.createElement('img');
   let aEl = document.createElement('a');
+  let pEl=document.createElement('p');
 
   imageEl.setAttribute('src', this.image);
-  thEl2.textContent = this.bookName;
+  pEl.textContent = this.bookName;
+  thEl2.appendChild(pEl);
+  // thEl2.textContent = this.bookName;
   let cartPrice = this.price * this.quantity;
   thEl3.textContent = cartPrice;
 

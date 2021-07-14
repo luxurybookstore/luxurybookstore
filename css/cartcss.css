@@ -1,20 +1,194 @@
-table, td, th {  
-    border: 1px solid #ddd;
-    text-align: left;
-  }
-  table {
-    /* border-collapse: collapse; */
-    width: 50%;
-  }
-  th, td {
-    padding: 15px;
-  }
-  img{
-      width: 50px;
-      height: 100px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+ * 
+{
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+  font-family:Arial, Helvetica, sans-serif;
+
+}
+body{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+/* -----------START HEADER----------------- */
+header
+  {
+    /* background-color: #D3B55A; */
+    background-color: rgba(255, 218, 8, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
 
   }
-  tfoot th{
-      /* width: 100%; */
-      text-align: center;
+  header .logo
+  {
+      height: 150px;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    height: 100px;
+    margin-left:40px ;
   }
+  nav ul li{
+    text-decoration: none;
+    font-size: 20px;  
+    display: inline-block;
+    padding-right: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+nav ul li a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+nav ul li a:hover{
+    text-decoration: none;
+    color: #D3B55A;
+}
+
+/* -----------END HEADER----------------- */
+
+/* -----------START MAIN----------------- */
+
+main{
+  width: 100%;
+}
+table {  
+  border: 1px solid #ddd;
+  text-align: left;
+  /* background-color:brown; */
+  width: 50%;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Source Sans Pro', sans-serif;
+
+  /* display:flex; */
+}
+thead{
+  /* border: 2px solid red; */
+}
+thead th{
+  padding: 10px;
+  /* margin: auto; */
+  font-size: 20px;
+  /* border: 2px solid red; */
+  /* font-family: 'Source Sans Pro', sans-serif; */
+
+}
+tbody tr {
+  /* position: relative; */
+  text-align: center;
+  /* margin-left: 50px; */
+  /* width: 50px; */
+  /* margin: auto; */
+  /* border: 2px solid red; */
+  
+}
+tbody td {
+  /* position: relative; */
+  /* text-align: center; */
+  /* margin-left: 50px; */
+  /* width: 50px; */
+  margin-top: auto;
+  margin-bottom: auto;
+  vertical-align:middle;
+  border:2px red; 
+   border-style:dashed; 
+   /* font-family: 'Source Sans Pro', sans-serif; */
+
+}
+tbody td p{
+  /* margin-top: auto;
+  margin-bottom: auto; */
+  /* padding: 5px; */
+ 
+
+  /* text-align: center; */
+  /* margin: auto; */
+  /* border: 2px solid black; */
+  /* margin-left: 50px; */
+  /* width: 50px; */
+  /* margin: auto; */
+  /* border: 2px solid red; */
+}
+/* th, td {
+  padding: 15px;
+} */
+img{
+    /* width: 50px; */
+    padding-top:15px ;
+    padding-bottom:15px;
+    height: 100px;
+
+}
+tfoot th{
+    /* width: 100%; */
+    text-align: center;
+    border: 2px solid red;
+  }
+
+form{
+  position: relative;
+  background-color: red;
+  border: 2px solid black;
+  height: 40px;
+  text-align: left;
+}
+form label{
+  padding: 10px;
+  margin-top: 5px;
+  margin: 10px;
+}
+button{
+  position: absolute;
+  right: 0;
+  /* margin-left: 0%; */
+  font-size: 20px;
+  height:  100%;
+}
+
+
+/* -----------END MAIN----------------- */
+
+/* -----------START FOOTER----------------- */
+.social
+{
+  /* position: absolute; */
+ 
+  z-index: 10;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red;
+}
+.social li
+{
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+  /* color: white; */
+  color: black;
+}
+.social li a
+{
+  display: inline-block;
+  margin-right: 20px;
+  filter: invert(1);
+  transform: scale(0.5);
+  transition: 0.5s;
+}
+.social li a:hover
+{
+  transform: scale(0.5) translateY(-15px);
+}
+
+/* -----------END FOOTER----------------- */

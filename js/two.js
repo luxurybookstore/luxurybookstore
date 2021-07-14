@@ -20,7 +20,7 @@ const swalWithBootstrapButtons = Swal.mixin({
     text: "You will not be able to undo your purchase",
     icon: 'warning',
     showCancelButton: true,
-    confirmButtonText: 'Yes, Buy it now!',
+    confirmButtonText: 'Yes',
     cancelButtonText: 'No, cancel!',
     reverseButtons: true
   }).then((result) => {

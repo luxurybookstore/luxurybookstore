@@ -24,22 +24,22 @@ Book.prototype.renderbook = function (bookObj) {
   let fictionContainerEl;
   switch (this.category) {
 
-    case 'Fiction':
+  case 'Fiction':
 
-      fictionContainerEl = document.getElementById('Fiction');
-      break;
-    case 'Art':
-      fictionContainerEl = document.getElementById('Art');
-      break;
-    case 'Business':
-      fictionContainerEl = document.getElementById('Business');
-      break;
-    case 'Children':
-      fictionContainerEl = document.getElementById('Children');
-      break;
-    case 'Biography':
-      fictionContainerEl = document.getElementById('Biography');
-      break;
+    fictionContainerEl = document.getElementById('Fiction');
+    break;
+  case 'Art':
+    fictionContainerEl = document.getElementById('Art');
+    break;
+  case 'Business':
+    fictionContainerEl = document.getElementById('Business');
+    break;
+  case 'Children':
+    fictionContainerEl = document.getElementById('Children');
+    break;
+  case 'Biography':
+    fictionContainerEl = document.getElementById('Biography');
+    break;
   }
 
 
@@ -62,7 +62,7 @@ Book.prototype.renderbook = function (bookObj) {
   // min="1"
   let labelEl = document.createElement('label');
   labelEl.setAttribute('for', `${qId}`)
-  labelEl.textContent = "Quantity:";
+  labelEl.textContent = "Qty";
 
 
 
@@ -171,8 +171,8 @@ function addToCart(event) {
       settingToLocalStorage();
       //   console.log('--3---');
       break;}
-      }
-      renderCartCount();
+  }
+  renderCartCount();
   //ABDULLU TRY 
   // event.preventDefault();
   // let productIndex = event.target.id;

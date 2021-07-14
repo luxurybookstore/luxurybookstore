@@ -32,7 +32,7 @@ header
 }
 header .logo
 {
-    height: 150px;
+    height: 120px;
   color: #fff;
   text-transform: uppercase;
   cursor: pointer;
@@ -99,13 +99,14 @@ header .logo
 }
 .text
 {
+  padding-top: 60px;
   position: relative;
   z-index: 10;
 }
 
 .text h2
 {
-  font-size: 5em;
+  font-size: 4em;
   font-weight: 800;
   color: #fff;
   line-height: 1em;
@@ -114,7 +115,7 @@ header .logo
 }
 .text h3
 {
-  font-size: 4em;
+  font-size: 3em;
   font-weight: 700;
   color: #fff;
   line-height: 1em;
@@ -123,12 +124,12 @@ header .logo
 }
 .text p
 {
-  font-size: 1.1em;
+  font-size: 1em;
   color: #fff;
   margin: 20px 0;
   font-weight: 400;
   max-width: 700px;
-  line-height: 20px;
+  line-height: 26px;
   font-family:Arial, Helvetica, sans-serif;
 }
 .text a
@@ -168,6 +169,7 @@ header .logo
 }
 .social li a
 {
+  color: white;
   display: inline-block;
   margin-right: 20px;
   filter: invert(1);
@@ -177,15 +179,21 @@ header .logo
 }
 .copy a{
     text-decoration: none;
-    color: #D3B55A;
-    font-size: 10pt;
-    font-family:Arial, Helvetica, sans-serif
+    color: rgb(255, 0, 0);
+    font-size: 25pt;
+    font-family:Arial, Helvetica, sans-serif;
+    margin-top: 5px;
 }
 
-
+.social li a:hover{
+  text-decoration: none;
+}
 
 .social li a:hover
 {
+  padding-left: 0pt;
+
+  color: #000000;
   transform: scale(0.5) translateY(-15px);
 }
 
@@ -194,7 +202,7 @@ nav ul li{
     text-decoration: none;
     font-size: 20px;  
     display: inline-block;
-    padding-right: 70px;
+    padding-right: 50px;
     font-family: Arial, Helvetica, sans-serif;
 }
 nav ul li a{

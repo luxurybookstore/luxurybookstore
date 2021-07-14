@@ -47,6 +47,7 @@ Book.prototype.renderbook = function (bookObj) {
   fictionContainerEl.appendChild(divBookEl);
   let bookheadingEl = document.createElement('h3');
   let bookPriceEl = document.createElement('p');
+  bookPriceEl.setAttribute('class','pri');
   let bookDescriptionEl = document.createElement('p');
   let bookImgEl = document.createElement('img');
   let buttonEl = document.createElement('button');
@@ -61,7 +62,7 @@ Book.prototype.renderbook = function (bookObj) {
   bookPriceEl.textContent = `price :${this.price} $`;
   bookDescriptionEl.textContent = this.description;
   bookImgEl.setAttribute('src', this.image);
-  buttonEl.textContent = 'add to cart';
+  buttonEl.textContent = 'Add To Cart';
 
   buttonEl.setAttribute('id', `${books.indexOf(this)}`);
   buttonEl.addEventListener('click', addToCart);

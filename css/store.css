@@ -166,10 +166,11 @@ div {
 }
 p{
   font-size: 12pt;
-  height: 170px;
+  height: 47px;
   text-align: center;
   min-width: min-content;
   overflow: hidden;
+  line-height: 18pt;
 }
 
 input{

@@ -165,8 +165,8 @@ div {
   height: fit-content;
 }
 p{
-  font-size: 10pt;
-  height: 50px;
+  font-size: 12pt;
+  height: 170px;
   text-align: center;
   min-width: min-content;
   overflow: hidden;

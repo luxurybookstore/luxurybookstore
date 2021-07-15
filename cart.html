@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,95 +7,88 @@
     <link rel="stylesheet" href="css/reset.css">
     <!-- <link rel="stylesheet" href="css/style.css"> -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
     <link rel="stylesheet" href="css/cartcss.css">
     <title>Your Cart</title>
 </head>
-
 <body>
     <header>
-        <img src="./img/luxury-white.png" alt="" id="logo">
+
+        <img class="logo" src="./img/luxury-black-2.png"  alt="Luxury Book Store">
+        <!-- <div class="toggle"></div> -->
         <nav>
             <ul>
-           <li><a href="store.html">Store</a></li> 
-            <li><a href="cart.html" id="cartA">Cart</a><span id="itemCount"></span></li>
-            <li><a href="aboutus.html">About Us</a></span></li>
-           </ul>
-        </nav>
-    </header>
-    <main>
+              <li><a href="./index.html">Home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a></li>
+              <li><a href="./store.html">Store&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a></li>
+              <li><a href="./aboutus.html">About Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+                <li><a href="cart.html" id="cartA">Cart</a><span id="itemCount"></span></li>
+            </ul>
 
-        <div>
+           
+        </nav>
+      </header>
+    <main>
+        <div class="con">
             <table id="cartTable">
                 <thead>
                     <tr>
-                        <th>image</th>
-                        <th>book name</th>
-                        <th>quantity</th>
-                        <th>price</th>
-                        <th>remove from cart</th>
-
-
+                        <th>IMAGE</th>
+                        <th>BOOK NAME</th>
+                        <th>QUANTITY</th>
+                        <th>PRICE</th>
+                        <th>REMOVE FROM CART</th>
                     </tr>
                 </thead>
                 <tbody id="tableb">
-                    <div></div>
-
+                    <div><tfoot id="tablef"></tfoot></div>
                 </tbody>
-
-                <tfoot id='tablef'>
-
+                
                 </tfoot>
-
-
             </table>
         </div>
         <!-- <section id="cartProducts">
-           
             </table>
-
         </section> -->
-        <section id="infoForm">
-            <form id="myform">
-                <label for="name"> Full Name</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" required >
+        <div class="form">
+    <section id="infoForm">
+        <form id="myform">
+            <label for="name"> Full Name</label>
+            <br>
+            <input type="text" id="name" name="name" placeholder="Your Name" required >
+            <br>
+            <br>
+            <label for="address"> Address</label>
+            <br>
+            <input type="text" id="address" name="address" placeholder="Your Address" required>
+            <br>
+            <br>
 
-                <label for="address"> Address</label>
-                <input type="text" id="address" name="address" placeholder="Your Address" required>
-                <!--     
-                <label for="fname">Accepted Cards</label>
-                <div class="icon-container">
-                  <i class="fa fa-cc-visa" style="color:navy;"></i>
-                  <i class="fa fa-cc-amex" style="color:blue;"></i>
-                  <i class="fa fa-cc-mastercard" style="color:red;"></i>
-                  <i class="fa fa-cc-discover" style="color:orange;"></i>
-                </div> -->
+            <label for="cardnumber">Credit card number</label>
+            <br>
+            <input type="text" id="cardnumber" name="cardnumber" placeholder="1111-2222-3333-4444" required>
+            <br>
+            <br>
+            <br>
+            <button id="btnProcessRequest">
+                Buy It Now!
+              </button>
+              <br><br><br><br>
+        </form>
+     </section>
+        </div>
 
-                <label for="cardnumber">Credit card number</label>
-                <input type="text" id="cardnumber" name="cardnumber" placeholder="1111-2222-3333-4444" required>
-
-
-                <!-- <input type="submit" value="Buy It Now!" id="btnProcessRequest"> -->
-              
-                <button id="btnProcessRequest">
-                    Buy It Now!
-                  </button>
-            </form>
-         </section>
-           
     </main>
-    <footer>
-        <p>Copyright &copy; 2021 by luxury book store Group,<a href="https://github.com/luxurybookstore">GithubOrg</a>
-        </p>
-        <img src="img/fb-icon.png" alt="">
-        <img src="img/twit-icon.png" alt="">
-        <img src="img/insta-icon.png" alt="">
-    </footer>
+    <footer class="footer">
+ 
+        <ul class="social">
+          <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+          <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+          <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+          <li><a href="https://github.com/luxurybookstore"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png" style="width: 41px; hight=41px;"></a></li>
+          <li class="copy">Copyright &copy; 2021 by luxury book store Group.</li>
+        </ul>
 
+</footer>
 </body>
 <script src="js/app.js"></script>
 <script src="js/two.js"></script>
-
-
-
 </html>

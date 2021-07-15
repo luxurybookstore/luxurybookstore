@@ -28,16 +28,16 @@ video
     opacity: 0.8;
     
   }
-  .overlay
+  /* .overlay
   {
     position:absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: #81775e;
+    background: #c4c4c4;
     mix-blend-mode:overlay;
-  }
+  } */
 
 
   
@@ -53,6 +53,7 @@ video
     justify-content: space-between;
     align-items: center;
     height: 120px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 
   }
   header .logo
@@ -88,73 +89,36 @@ nav ul li a:hover{
     position: relative;
     /* background-color: rgb(255, 255, 255);  */
     font-family: Arial, Helvetica, sans-serif;
-    background: rgba(50, 62, 26, 0.516);
+    /* background: rgba(50, 62, 26, 0.516); */
     min-height: 100vh;
-    box-sizing: ;
+    /* background-color: #f7f7f6; */
     
 
   }
 
-  .footer{
-      /* position: absolute; */
-      width: 100%;
-      margin-top: px;
-      height: 120px;
-      color: white;
-  }
-
-
-
-
-
-.social
-{
-  position: absolute;
-  z-index: 10;
-  bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.social li
-{
-  list-style: none;
-  font-family: Arial, Helvetica, sans-serif;
-  /* color: white; */
-}
-.social li a
-{
-  display: inline-block;
-  margin-right: 20px;
-  filter: invert(1);
-  transform: scale(0.5);
-  transition: 0.5s;
-
-}
-.copy a{
-    text-decoration: none;
-    color: #D3B55A;
-    font-size: 10pt;
-    font-family:Arial, Helvetica, sans-serif
-}
-
-
-
-.social li a:hover
-{
-  transform: scale(0.5) translateY(-15px);
-}
 
 .port-a{
     padding-top: 20px;
     text-align: center;
-    -moz-box-align: center;
+    /* -moz-box-align: center; */
+    vertical-align: middle;
+    width: fit-content;
     
+}
+.cards{
+  padding-top: 20px;
+  text-align: center;
+  /* -moz-box-align: center; */
+  vertical-align: middle;
+  margin: auto;
+  width: fit-content;
+  margin: 0;
+  
 }
 
 .port-b{
      margin: 15px;
-     display: inline-table;
+     /* display: inline-table; */
      width: 400px;
      height: 500px;
     background-color: white;
@@ -221,18 +185,18 @@ h3,p,a{
     width: 400px;
     height: 500px;
     background-color: rgba(255, 255, 255, 0.048); 
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.527));
+    /* background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.527)); */
     backdrop-filter: blur(10px);
-    
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    background-color: #b49b50;;
 
   }
   
   .flip-card-front {
     /* background-color: #bbb; */
     color: rgba(0, 0, 0, 0);
-        border-radius: 10px;
+        /* border-radius: 10px; */
   }
   
   .flip-card-back {
@@ -240,7 +204,7 @@ h3,p,a{
     color: white;
     transform: rotateY(180deg);
     height: 500px; 
-    border-radius: 10px;
+    /* border-radius: 10px; */
   }
 
  h2{
@@ -291,3 +255,69 @@ text-decoration: none;
   .fliplink a:hover{
     color: #b49b50;
   }
+
+
+
+
+
+
+  .social
+{
+  /* position: absolute; */
+  z-index: 10;
+  bottom: 20px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  margin-left: 40px ;
+  bottom: 15px;
+}
+.social li
+{
+
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+  /* color: white; */
+}
+.social li a
+{
+  display: inline-block;
+  margin-right: 20px;
+  filter: invert(1);
+  transform: scale(0.5);
+  transition: 0.5s;
+
+}
+.copy a{
+    text-decoration: none;
+    color: #D3B55A;
+    font-size: 10pt;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+
+
+.social li a:hover
+{
+  transform: scale(0.5) translateY(-15px);
+}
+
+
+
+.footer{
+  /* position: absolute; */
+  width: 100%;
+  /* margin-left: 40px; */
+  height: 80px;
+  color: white;
+  background-color: #D3B55A;
+  bottom: 0;
+
+
+
+
+}
+.footer img{
+  height: 41px;
+  width: 41px;
+}

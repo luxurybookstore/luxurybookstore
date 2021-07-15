@@ -18,7 +18,7 @@ function Book(path, name, category, desription, price) {
 
 console.log(books);
 
-Book.prototype.renderbook = function (bookObj) {
+Book.prototype.renderbook = function () {
   let fictionContainerEl;
   switch (this.category) {
 
@@ -103,15 +103,15 @@ function addToCart(event) {
   carts.push(books[event.target.id]);
   indexcarts.push(event.target.id);
   qountityes.push(event.target.quantityname.value);
-  console.log(event.target.id);
-  console.log(carts);
-  console.log(indexcarts);
-  console.log(qountityes);
+  // console.log(event.target.id);
+  // console.log(carts);
+  // console.log(indexcarts);
+  // console.log(qountityes);
   savecartsToLocalStorage();
   saveindexToLocalStorage();
   savequantityToLocalStorage();
 
-
+  readqountityesFromLocalStorage;
 }
 function savecartsToLocalStorage() {
   let data = JSON.stringify(carts);
@@ -124,6 +124,92 @@ function saveindexToLocalStorage() {
 function savequantityToLocalStorage() {
   let data = JSON.stringify(qountityes);
   localStorage.setItem('qountityes', data);
+}
+
+let qountityarry = [];
+let indexArry = [];
+let cartsArray = [];
+
+function readqountityesFromLocalStorage() {
+  let stringObj = localStorage.getItem('qountityes');
+  // console.log(stringObj);
+  let normalObj = JSON.parse(stringObj);
+  // console.log('-------------------------------');
+  // console.log(normalObj);
+  if (normalObj !== null) {
+    qountityarry = normalObj;
+    //     renderOrders();
+  }
+}
+readqountityesFromLocalStorage();
+
+
+console.log('---------------');
+console.log(qountityarry);
+
+
+function readcartsFromLocalStorage() {
+  let stringObj = localStorage.getItem('carts');
+  // console.log(stringObj);
+  let normalObj = JSON.parse(stringObj);
+  // console.log('-------------------------------');
+  // console.log(normalObj);
+  if (normalObj !== null) {
+    cartsArray = normalObj;
+    //     renderOrders();
+  }
+}
+readcartsFromLocalStorage();
+
+
+console.log('---------------');
+console.log(cartsArray);
+
+function readindexFromLocalStorage() {
+  let stringObj = localStorage.getItem('indexcarts');
+  // console.log(stringObj);
+  let normalObj = JSON.parse(stringObj);
+  // console.log('-------------------------------');
+  // console.log(normalObj);
+  if (normalObj !== null) {
+    indexArry = normalObj;
+    //     renderOrders();
+  }
+}
+readindexFromLocalStorage();
+
+
+console.log('---------------');
+console.log(indexArry);
+
+
+
+let tabelEl;
+
+
+tabelEl = document.getElementById('tablebody');
+
+let trEl = document.createElement('tr');
+
+for (let i = 0; i < cartsArray.length; i++) {
+  let trEl = document.createElement('tr');
+  let thimEl =document.createElement('img')
+  let thinamEl =document.createElement('th');
+  let thiqunEl =document.createElement('th');
+  let thpriEl =document.createElement('th');
+  let thremEl =document.createElement('th');
+  thimEl.setAttribute('src',cartsArray[i].image);
+  thinamEl.textContent=cartsArray[i].bookName;
+  thiqunEl.textContent=qountityarry[i];
+  thpriEl.textContent=cartsArray[i].price*qountityarry[i];
+  thremEl.textContent='x';
+  tabelEl.appendChild(trEl);
+  trEl.appendChild(thimEl);
+  trEl.appendChild(thinamEl);
+  trEl.appendChild(thiqunEl);
+  trEl.appendChild(thpriEl);
+  trEl.appendChild(thremEl);
+
 }
 
 // let counter = 0;
